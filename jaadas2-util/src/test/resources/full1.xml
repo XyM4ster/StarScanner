@@ -1,0 +1,33 @@
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<DataFlowResults FileFormatVersion="102" TerminationState="Success">
+    <Results>
+        <Result>
+            <Sink Statement="virtualinvoke r0.&lt;com.vivo.assistant.base.BaseActivity: void startActivity(android.content.Intent)&gt;($r2)" Category="Inter-App Communication" Method="&lt;com.vivo.assistant.base.BaseActivity: void onCreate(android.os.Bundle)&gt;" SystemCategory="INTER_APP_COMMUNICATION">
+                <AccessPath Value="$r2" Type="android.content.Intent" TaintSubFields="true" />
+            </Sink>
+            <Sources>
+                <Source Statement="$r2 = virtualinvoke r0.&lt;com.vivo.assistant.base.BaseActivity: android.content.Intent getIntent()&gt;()" Category="No Category" Method="&lt;com.vivo.assistant.base.BaseActivity: void onCreate(android.os.Bundle)&gt;" SystemCategory="NO_CATEGORY">
+                    <AccessPath Value="$r2" Type="android.content.Intent" TaintSubFields="true" />
+                    <TaintPath>
+                        <PathElement Statement="$r2 = virtualinvoke r0.&lt;com.vivo.assistant.base.BaseActivity: android.content.Intent getIntent()&gt;()" Method="&lt;com.vivo.assistant.base.BaseActivity: void onCreate(android.os.Bundle)&gt;">
+                            <AccessPath Value="$r2" Type="android.content.Intent" TaintSubFields="true" />
+                        </PathElement>
+                        <PathElement Statement="virtualinvoke r0.&lt;com.vivo.assistant.base.BaseActivity: void startActivity(android.content.Intent)&gt;($r2)" Method="&lt;com.vivo.assistant.base.BaseActivity: void onCreate(android.os.Bundle)&gt;">
+                            <AccessPath Value="$r2" Type="android.content.Intent" TaintSubFields="true" />
+                        </PathElement>
+                    </TaintPath>
+                </Source>
+            </Sources>
+        </Result>
+    </Results>
+    <PerformanceData>
+        <PerformanceEntry Name="CallgraphConstructionSeconds" Value="18" />
+        <PerformanceEntry Name="TotalRuntimeSeconds" Value="23" />
+        <PerformanceEntry Name="MaxMemoryConsumption" Value="2124" />
+        <PerformanceEntry Name="SourceCount" Value="7" />
+        <PerformanceEntry Name="SinkCount" Value="4" />
+    </PerformanceData>
+</DataFlowResults>
+
